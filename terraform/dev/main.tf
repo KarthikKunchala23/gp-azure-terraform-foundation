@@ -19,6 +19,11 @@ module "vnet" {
       name                            = "private-subnet"
       address_prefix                  = "10.0.2.0/24"
       default_outbound_access_enabled = false
+    },
+    {
+      name                            = "AzureBastionSubnet"
+      address_prefix                  = "10.0.3.0/24"
+      default_outbound_access_enabled = true
     }
   ]
   tags = {
