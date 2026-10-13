@@ -15,5 +15,5 @@ output "vnet_address_space" {
 }
 
 output "subnet_ids" {
-  value = [for subnet in azurerm_virtual_network.this.subnet : subnet.id]
+  value = { for subnet in azurerm_virtual_network.this.subnet : subnet.name => subnet.id }
 }

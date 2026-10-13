@@ -16,6 +16,10 @@ resource "azurerm_virtual_network" "this" {
         subnet.value.default_outbound_access_enabled
       )
 
+      security_group = (
+        subnet.value.security_group_id
+      )
+
       private_endpoint_network_policies = (
         subnet.value.private_endpoint_network_policies
       )

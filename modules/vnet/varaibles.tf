@@ -33,6 +33,8 @@ variable "subnets" {
       "Disabled"
     )
 
+    security_group_id = optional(string, null)
+
     private_link_service_network_policies = optional(
       bool,
       true
