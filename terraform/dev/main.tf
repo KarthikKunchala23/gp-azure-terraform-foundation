@@ -24,29 +24,30 @@ locals {
           destination_port_range     = "22"
           source_address_prefix      = "10.0.3.0/24"
           destination_address_prefix = "*"
-        },
-        {
-          name                       = "DenyHTTP"
-          priority                   = 200
-          direction                  = "Outbound"
-          access                     = "Deny"
-          protocol                   = "*"
-          source_port_range          = "*"
-          destination_port_range     = "80"
-          source_address_prefix      = "*"
-          destination_address_prefix = "*"
-        },
-        {
-          name                       = "DenyHTTPS"
-          priority                   = 201
-          direction                  = "Outbound"
-          access                     = "Deny"
-          protocol                   = "*"
-          source_port_range          = "*"
-          destination_port_range     = "443"
-          source_address_prefix      = "*"
-          destination_address_prefix = "*"
         }
+        # This rules are commented out because the public subnet has default outbound access enabled, which allows all outbound traffic. If you want to restrict outbound traffic, you can uncomment these rules and adjust them as needed.
+        # {
+        #   name                       = "DenyHTTP"
+        #   priority                   = 200
+        #   direction                  = "Outbound"
+        #   access                     = "Deny"
+        #   protocol                   = "*"
+        #   source_port_range          = "*"
+        #   destination_port_range     = "80"
+        #   source_address_prefix      = "*"
+        #   destination_address_prefix = "*"
+        # },
+        # {
+        #   name                       = "DenyHTTPS"
+        #   priority                   = 201
+        #   direction                  = "Outbound"
+        #   access                     = "Deny"
+        #   protocol                   = "*"
+        #   source_port_range          = "*"
+        #   destination_port_range     = "443"
+        #   source_address_prefix      = "*"
+        #   destination_address_prefix = "*"
+        # }
       ]
     }
 
